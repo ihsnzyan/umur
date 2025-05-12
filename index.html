@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Umur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="atasan"><h1 class="judul">Sanzekai</h1></div>
+
+    <div class="konten">
+        <h1 class="nata">Tebak Umur Kalian!</h1>
+        <div class="boks">
+            
+            <input type="text" id="nama" placeholder="Nama" class="nama">
+            <input type="number" id="usia" placeholder="Usia" class="usia">
+            <div class="buton"><button onclick="sending()" class="snd">SEND</button></div>
+        </div>
+        <div class="hasile"><p id="hasil"></p></div>
+        
+    </div>
+        <div class="sosmed">
+        <a href="https://www.instagram.com/ihsnz_yan?igsh=MWtrenRtbDR2bXNiYQ==" target="_blank"> <img src="instagram.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@ihsnz_yan?_t=ZS-8vzwYNFj7aM&_r=1" target="_blank"> <img src="tiktok.png" alt="Tiktok"></a>
+        <a href="https://www.snapchat.com/add/ihsnz_yan?share_id=ugIeX0cPNjY&locale=id-ID" target="_blank"> <img src="snapchat.png" alt="Snapchat"></a>
+        <a href="https://www.facebook.com/share/1HgCufMezm/" target="_blank"> <img src="facebook.png" alt="Facebook"></a>
+        <a href="https://x.com/ihsnz_yan?t=RIm5MIWzc1n9Yeh75rHBJQ&s=09" target="_blank"> <img src="twitter.png" alt="twitter"></a>
+        <a href="https://open.spotify.com/user/31p4igkn7dx5btemjxzd3f2wnp54?si=dqCLxoyXRnCe3PMtrhRwhA" target="_blank"> <img src="spotify.png" alt="Spotify"></a>
+        <a href="https://youtube.com/@ihsnz_yan?si=x-3OIeBz9A4LCLhi" target="_blank"> <img src="youtube.png" alt="Youtube"></a>
+    </div>
+
+</body>
+</html>
+<script> 
+    function sending() {
+        let hasil = document.getElementById("hasil");
+        let nama = document.getElementById("nama").value;
+        let usia = document.getElementById("usia").value;
+        const namaValid = /^[A-Za-z\s]+$/.test(nama);
+
+        if (nama == "" || !namaValid){
+            hasil.innerText = "MASUKKAN NAMA DENGAN BENAR";
+            hasil.style.color = "red";
+        }
+        else if  (usia == "") {hasil.innerText = "USIANYA BELUM DIMASUKKAN"; hasil.style.color = "red";}
+        else if  (usia < 0) {hasil.innerText = "GAADA USIA MINUS KOCAK"; hasil.style.color = "red";}
+        else if  (usia > 50) {hasil.innerText = "BJIR UDAH TUA"; hasil.style.color = "black";}
+        else if  (usia < 12) {hasil.innerText = "BOCIL";  hasil.style.color = "black";}
+        else {
+            hasil.innerText = "Nama Anda " + usia + " dan Anda berumur " + nama;  hasil.style.color = "black";
+        }}
+</script>
